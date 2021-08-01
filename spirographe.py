@@ -12,7 +12,7 @@ pg.init()
 f = pg.display.set_mode(size=(WIND, WIND))
 pg.display.set_caption("Pendulum")
 fpsClock = pg.time.Clock()
-font = pg.font.Font('../consolas.ttf', 30)  # police//roxane
+
 b = 1
 positions = []
 Reves = []
@@ -97,7 +97,7 @@ try:
                 b = False
                 print(" Fin du jeu  babe")
             elif event.type == pg.KEYUP:
-                if event.dict['key'] == pg.K_SPACE:
+                if event.key == pg.K_SPACE:
                     coul=random.random()*360
                     couleur_boule=hsv_to_rgb(coul,1,255)
                     couleur_trait=hsv_to_rgb(360-coul,1,255)
@@ -108,23 +108,7 @@ try:
                                               Reves[i].boul.y)
                     positions = []
 
-                """if event.dict['key']==pg.K_a:"""
-
-            elif event.type == pg.MOUSEBUTTONUP:
-                """if event.button==1: #click gauche
-                    pos=event.pos
-
-
-                if event.button==3: #click droit
-
-                elif event.button==4: #vers le haut
-                    zoom+=0.01
-                elif event.button==5: #vers le bas
-                    zoom-=0.01"""
-
-        #text = font.render(str(reve.angle), True, (255,255,255))
-        #textRect = text.get_rect()
-        #f.blit(text, (0,0))
+           
 
         fpsClock.tick(FPS)
 except:
